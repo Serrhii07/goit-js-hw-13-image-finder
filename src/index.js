@@ -34,7 +34,7 @@ refs.loadMoreBtn.addEventListener('click', () => {
 
 function scrollPage() {
   window.scrollTo({
-    top: document.documentElement.offsetHeight,
+    top: document.documentElement.offsetHeight - 930,
     behavior: 'smooth',
   });
 }
