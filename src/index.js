@@ -18,7 +18,9 @@ refs.searchForm.addEventListener('submit', event => {
 
   apiService.fetchImages().then(hits => {
     updateGalleryMarkup(hits);
-    refs.loadMoreBtn.classList.remove('is-hidden');
+    if (hits.length === 12) {
+      refs.loadMoreBtn.classList.remove('is-hidden');
+    }
   });
 });
 
@@ -31,8 +33,8 @@ refs.loadMoreBtn.addEventListener('click', () => {
 });
 
 function scrollPage() {
-  window.scrollBy({
-    top: 500,
+  window.scrollTo({
+    top: document.documentElement.offsetHeight,
     behavior: 'smooth',
   });
 }
